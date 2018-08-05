@@ -1,2 +1,2 @@
-# LaunchSchool Miscellanous GUI Apps for LS 230 Course
+# LaunchSchool Miscellanous GUI Apps exercises for LS 230 Course
 
