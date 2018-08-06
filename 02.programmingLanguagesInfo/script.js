@@ -1,23 +1,27 @@
-window.addEventListener('DOMContentLoaded', function() {
-  var p = document.getElementsByTagName('p');
-  var initialText;
-  var truncatedText;
-  var button;
+window.addEventListener('DOMContentLoaded', () => {
+  const p = document.querySelectorAll('p');
 
-  Array.prototype.slice.call(p).forEach(para => {
-    initialText = para.textContent;
-    truncatedText = para.textContent.slice(0, 120) + ' ...';
-    para.textContent = truncatedText;
-    button = para.nextElementSibling;
+  for (let i = 0; i < p.length; i += 1) {
+    let initialText = p[i].textContent;
+    let truncatedText = p[i].textContent.slice(0, 120) + ' ...';
+    let buttons = document.querySelectorAll('button');
+    let button = buttons[i];
+    button.style.display = 'block';
 
-    button.addEventListener('click', function() {
-      if (this.textContent === 'Show more') {
-        this.textContent = 'Show less';
-        para.textContent = initialText;
+    if (initialText.length > 120) {
+      p[i].textContent = truncatedText;
+    } else {
+      button.style.display = 'none';
+    }
+    
+    button.addEventListener('click', () => {
+      if (button.textContent === 'Show more') {
+        button.textContent = 'Show less';
+        p[i].textContent = initialText;
       } else {
-        this.textContent = 'Show more';
-        para.textContent = truncatedText;
-      }     
-    })
-  });
+        button.textContent = 'Show more';
+        p[i].textContent = truncatedText;
+      }
+    }); 
+  } 
 });
