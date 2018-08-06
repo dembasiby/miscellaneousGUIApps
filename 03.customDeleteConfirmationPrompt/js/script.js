@@ -15,7 +15,10 @@ todo_items.forEach(todo => {
 var spans = document.querySelectorAll('li span');
 Array.prototype.slice.call(spans).forEach(function(span) {
     span.addEventListener('click', function(e) {
-        e.target.parentNode.remove();
+        let confirmation = confirm('Are you sure you want to delete this todo?');
+        if (confirmation === true) {
+            e.target.parentNode.remove();
+        }
     })
 })
 
