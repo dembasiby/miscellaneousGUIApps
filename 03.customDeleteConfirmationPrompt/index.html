@@ -9,11 +9,14 @@
 <body>
     <div id="container">
         <h1>Todos</h1>
-        <ul>
-            <script id="todos" type="text/x-handlebars-template">
-                <li data-id="{{id}}">{{title}}</li>
-            </script>
-        </ul>
+        <ul id="displayTodos"></ul>  
     </div>
+
+    <script id="todos" type="text/x-handlebars-template">
+        <li data-id="{{id}}">{{title}} <span>&#10060</span></li>
+    </script>
+
+    <script src="/js/handlebars.min.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
