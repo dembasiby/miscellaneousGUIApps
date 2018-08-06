@@ -8,18 +8,18 @@ var template = Handlebars.compile(todos);
 var ul = document.getElementById('displayTodos');
 
 todo_items.forEach(todo => {
-    var html = template(todo);
-    ul.innerHTML += html;
+  let html = template(todo);
+  ul.innerHTML += html;
 });
 
 var spans = document.querySelectorAll('li span');
-Array.prototype.slice.call(spans).forEach(function(span) {
-    span.addEventListener('click', function(e) {
-        let confirmation = confirm('Are you sure you want to delete this todo?');
-        if (confirmation === true) {
-            e.target.parentNode.remove();
-        }
-    })
+
+Array.prototype.slice.call(spans).forEach((span) => {
+  span.addEventListener('click', (e) => {
+    if (confirm('Are you sure you want to delete this todo?')) {
+      e.target.parentNode.remove();
+    }
+  })
 })
 
 
