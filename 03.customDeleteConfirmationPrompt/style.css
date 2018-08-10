@@ -7,15 +7,16 @@ body {
     position: relative;
 }
 #confirm {
-    background-color: aliceblue;
+    background-color: yellowgreen;
     font-size: .9rem;
     padding: 15px;
     color: #1e1e1e;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 50%;
+    right: 20%;
     display: none;
     z-index: 10;
+    border-radius: 1em;
 }
 #buttons {
     text-align: right;
@@ -33,7 +34,7 @@ span, p {
     box-sizing: border-box;
     display: inline-block;
 }
-p {
+li p {
     text-align: left;
     width: 80%;
 }
@@ -45,4 +46,21 @@ span:hover,
 .confirmYes:hover,
 .confirmNo:hover {
     cursor: pointer;
+}
+.confirmYes,
+.confirmNo {
+    padding: 5px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: .8rem;
+}
+.confirmYes {
+    background-color: aqua;
+    border-color: aqua;
+}
+.confirmNo {
+    background-color: crimson;
+    border-color: crimson;
+
 }
