@@ -7,6 +7,8 @@ var todos = document.getElementById('todos').innerHTML;
 var template = Handlebars.compile(todos);
 var ul = document.getElementById('displayTodos');
 var confirm = document.querySelector('#confirm');
+var yes = document.querySelector('.confirmYes');
+var no = document.querySelector('.confirmNo');
 
 function confirmStyle(value) {
   confirm.style.display = value;
@@ -18,15 +20,10 @@ todoItems.forEach(function(todo) {
 });
 
 var spans = document.querySelectorAll('li span');
-var yes;
-var no;
 
 Array.prototype.slice.call(spans).forEach(function (span) {
   span.addEventListener('click', function (e) {
     confirmStyle('block');
-
-    yes = document.querySelector('.confirmYes');
-    no = document.querySelector('.confirmNo');
 
     yes.addEventListener('click', function() {
       e.target.parentNode.remove();
