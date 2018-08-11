@@ -25,7 +25,9 @@
     
 
     <script id="todos" type="text/x-handlebars-template">
-        <li data-id="{{id}}"><p>{{title}} </p><span>&#10060</span></li>
+        {{#each todos }}
+            <li data-id="{{id}}"><p>{{title}} </p><span>&#10060</span></li>
+        {{/each}}
     </script>
 
     <script src="/js/handlebars.min.js"></script>
