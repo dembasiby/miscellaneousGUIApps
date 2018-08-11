@@ -22,8 +22,13 @@ body {
     text-align: right;
 }
 li {
-    max-width: 650px;
     list-style: none;
+}
+li a {
+    text-decoration: none;
+}
+#displayTodos li {
+    max-width: 650px;
     padding: 10px 10px 10px 30px;
     color: #1e1e1e;
     background-color: aliceblue;
@@ -62,5 +67,33 @@ span:hover,
 .confirmNo {
     background-color: crimson;
     border-color: crimson;
-
 }
+#contextmenu {
+    display: none;
+    width: 200px;
+    padding: 5px 0;
+    position: absolute;
+    top: 20%;
+    right: 30%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#contextmenu li {
+    margin: 2px 0;
+    padding: 10px 15px;
+    background-color: #cecece;
+    border-radius: 5px;
+}
+#contextmenu li a,
+#contextmenu li a:visited,
+#contextmenu li a:active {
+    color: #1e1e1e;
+}
+#contextmenu li a:hover {
+    color: #fff;
+}
+#contextmenu ul {
+    padding: 0;
+    background-color: #fff;
+    border-radius: 5px;  
+}
+
