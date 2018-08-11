@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>A Custom Delete Confirmation Prompt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Todos</h1>
+        <ul id="displayTodos">
+            
+        </ul> 
+        
+        <div id="confirm">
+            <p>Are you sure you want to delete this todo?</p>
+            <div id="buttons">
+                <button class="confirmYes">Yes</button>
+                <button class="confirmNo">No</button>
+            </div>
+        </div>
+    </div>
+    
+
+    <script id="todos" type="text/x-handlebars-template">
+        {{#each todos }}
+            <li data-id="{{id}}"><p>{{title}} </p><span>&#10060</span></li>
+        {{/each}}
+    </script>
+
+    <script src="/js/handlebars.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
