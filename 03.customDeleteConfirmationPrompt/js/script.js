@@ -16,10 +16,8 @@ function deleteTodo(event) {
   confirmStyle('none');
 }
 
-todoItems.forEach(function(todo) {
-  var html = template(todo);
-  document.getElementById('displayTodos').innerHTML += html;
-});
+var html = template({ todos: todoItems });
+document.getElementById('displayTodos').innerHTML += html;
 
 var spans = document.querySelectorAll('li span');
 
