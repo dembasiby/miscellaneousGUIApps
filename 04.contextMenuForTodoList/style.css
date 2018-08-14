@@ -29,25 +29,14 @@ li a {
 }
 #displayTodos li {
     max-width: 650px;
-    padding: 10px 10px 10px 30px;
+    width: 100%;
+    padding: 20px 10px 20px 30px;
     color: #1e1e1e;
     background-color: aliceblue;
     margin: 10px;
     border-radius: 1em;
-}
-span, p {
     box-sizing: border-box;
-    display: inline-block;
 }
-li p {
-    text-align: left;
-    width: 80%;
-}
-span {
-    width: 20%;
-    text-align: right;
-}
-span:hover,
 .confirmYes:hover,
 .confirmNo:hover {
     cursor: pointer;
@@ -75,7 +64,7 @@ span:hover,
     position: absolute;
     top: 20%;
     right: 30%;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Georgia, serif;
 }
 #contextmenu li {
     margin: 2px 0;
@@ -83,11 +72,18 @@ span:hover,
     background-color: #cecece;
     border-radius: 5px;
 }
+#contextmenu li a {
+    display: block;
+}
 #contextmenu li a,
 #contextmenu li a:visited,
 #contextmenu li a:active {
     color: #1e1e1e;
 }
+#contextmenu li:hover {
+    background-color: #1e1e1e;
+}
+
 #contextmenu li a:hover {
     color: #fff;
 }

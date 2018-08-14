@@ -6,15 +6,17 @@ var todos = document.getElementById('todos').innerHTML;
 var template = Handlebars.compile(todos);
 var yes = document.querySelector('.confirmYes');
 var no = document.querySelector('.confirmNo');
+var deleteTodo = document.querySelector('#deleteTodo');
 
-function confirmStyle(value) {
-  document.querySelector('#confirm').style.display = value;
+
+function displayItem(elem, value) {
+  document.querySelector(elem).style.display = value;
 }
 
-function deleteTodo(event) {
-  event.target.parentNode.remove();
-  confirmStyle('none');
-}
+// function deleteTodo(event) {
+//   event.target.remove();
+//   displayItem('#confirm', 'none');
+// }
 
 var html = template({ todos: todoItems });
 document.getElementById('displayTodos').innerHTML += html;
@@ -22,18 +24,33 @@ document.getElementById('displayTodos').innerHTML += html;
 var lis = document.querySelectorAll('#displayTodos li');
 
 Array.prototype.slice.call(lis).forEach(function (li) {
-li.addEventListener('contextmenu', function (e) {
+  li.addEventListener('contextmenu', function (e) {
     e.preventDefault();
-    console.log('Right click event occured!');
-    confirmStyle('block');
+    displayItem('#contextmenu', 'block');
+    var li = e.target;
+    
+    deleteTodo.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      displayItem('#confirm', 'block');
+      displayItem('#contextmenu', 'none');
+    
+      yes.addEventListener('click', function() {
+        li.remove();
+        displayItem('#confirm', 'none');
+      });
+    
+      no.addEventListener('click', function() {
+        displayItem('#confirm', 'none');
+      });
 
-    yes.addEventListener('click', function() {
-      deleteTodo(e);
-    });
-
-    no.addEventListener('click', function() {
-      confirmStyle('none');
+      
     });
   });
 });
+
+document.addEventListener('click', function() {
+  displayItem('#contextmenu', 'none');
+});
+
 
