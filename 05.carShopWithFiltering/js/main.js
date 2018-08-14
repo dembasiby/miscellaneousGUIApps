@@ -7,3 +7,8 @@ var cars = [
     { make: 'Audi', image: 'img/audi-a4-2013.jpg', model: 'A4', year: 2013, price: 25000 },
     { make: 'Audi', image: 'img/audi-a4-2013.jpg', model: 'A4', year: 2013, price: 26000 },
   ];
+
+  var carTemplate = document.querySelector('#car-template').innerHTML;
+  var template = Handlebars.compile(carTemplate);
+  var html = template({cars: cars});
+  document.querySelector('#car-list').innerHTML += html;
