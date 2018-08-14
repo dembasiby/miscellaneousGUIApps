@@ -8,8 +8,27 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <header>
+        <h1>Buy Used Cars</h1>
+        <div id="selection"></div>
+    </header>
+    <main>
+        <div id="car-list">
 
-    
+        </div>
+        <script type="text/x-handlebars-template">
+            {{#each cars}}
+                <div class="car-details">
+                    <img src="{{image}}" alt="{{make}} {{model}}">
+                    <h4>{{make}} {{model}} </h4>
+                    <p>Year: {{year}}</p>
+                    <p>Price: ${{price}}</p>
+                    <button class="btn-buy">Buy</button>
+                </div>
+            {{/each}}
+        </script>
+    </main>
+    <script src="js/handlebars.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
