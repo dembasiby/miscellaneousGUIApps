@@ -33,33 +33,37 @@
 
         <script id="filter-search" type="text/x-handlebars-template">
             <form action="#">
-                    <label>
-                        <select name="make" id="make">Make</select>a
-                        <option value="all">All</option
-                        {{#each makes}}
-                            <option value="{{make}}">{{make}} </option>
-                        {{/each}}
+                    <label>Make
+                        <select name="make" id="make">
+                            <option value="all">All</option>
+                            {{#each makes}}
+                                <option value="{{make}}">{{make}} </option>
+                            {{/each}}
+                        </select>
                     </label>
-                    <label>
-                        <select name="model" id="model">Model</select>a
-                        <option value="all">All</option
-                        {{#each makes}}
-                            <option value="{{model}}">{{model}} </option>
-                        {{/each}}
+                    <label>Model
+                        <select name="model" id="model">
+                            <option value="all">All</option>
+                            {{#each makes}}
+                                <option value="{{model}}">{{model}} </option>
+                            {{/each}}
+                        </select>
                     </label>
-                    <label>
-                        <select name="price" id="price">Price</select>a
-                        <option value="any">Any</option
-                        {{#each prices}}
-                            <option value="{{price}}">{{price}} </option>
-                        {{/each}}
+                    <label>Price
+                        <select name="price" id="price">
+                            <option value="any">Any</option>
+                            {{#each prices}}
+                                <option value="{{price}}">{{price}} </option>
+                            {{/each}}
+                        </select>
                     </label>
-                    <label>
-                        <select name="year" id="year">Year</select>a
-                        <option value="any">Any</option
-                        {{#each years}}
-                            <option value="{{year}}">{{year}} </option>
-                        {{/each}}
+                    <label>Year
+                        <select name="year" id="year">
+                            <option value="any">Any</option>
+                            {{#each years}}
+                                <option value="{{year}}">{{year}} </option>
+                            {{/each}}
+                        </select>
                     </label>
                     <input type="submit" value="Filter">
                 </form>

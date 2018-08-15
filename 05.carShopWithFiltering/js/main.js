@@ -9,6 +9,13 @@ var cars = [
   ];
 
   var carTemplate = document.querySelector('#car-template').innerHTML;
-  var template = Handlebars.compile(carTemplate);
-  var html = template({cars: cars});
-  document.querySelector('#car-list').innerHTML = html;
+  var filterTemplate = document.querySelector('#filter-search').innerHTML;
+
+  var cartemplate = Handlebars.compile(carTemplate);
+  var filterCar = Handlebars.compile(filterTemplate);
+
+  var carHtml = cartemplate({cars: cars});
+  var filterHtml = filterCar(cars);
+
+  document.querySelector('#car-list').innerHTML = carHtml;
+  document.querySelector('#selection').innerHTML = filterHtml;
