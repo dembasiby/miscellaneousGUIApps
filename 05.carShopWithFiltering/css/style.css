@@ -24,3 +24,13 @@ h1 {
     vertical-align: bottom;
     flex: 1;
 }
+.btn-buy {
+    width: 90px;
+    padding: .5em 0;
+    border-radius: 5px;
+    color: rgba(71, 71, 68, 0.81);
+    background-color: rgba(247, 247, 7, 0.534);
+    border: none;
+    font-size: 1em;
+    font-weight: 500;
+}
