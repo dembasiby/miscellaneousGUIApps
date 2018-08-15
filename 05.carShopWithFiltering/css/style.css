@@ -1,0 +1,26 @@
+@import url("whitespace-reset.css");
+
+body {
+    padding: 20px;
+    font: normal 16px Helvetica, Arial, sans-serif;
+}
+h1 {
+    font-size: 2em;
+}
+#car-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: 1fr;
+    grid-gap: 1em;
+}
+#car-list li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+#car-list li img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+    flex: 1;
+}

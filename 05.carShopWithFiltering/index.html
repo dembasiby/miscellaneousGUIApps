@@ -13,18 +13,18 @@
         <div id="selection"></div>
     </header>
     <main>
-        <div id="car-list">
+        <ul id="car-list">
 
-        </div>
+        </ul>
         <script id="car-template" type="text/x-handlebars-template">
             {{#each cars}}
-                <div class="car-details">
+                <li class="car-details">
                     <img src="{{image}}" alt="{{make}} {{model}}">
                     <h4>{{make}} {{model}} </h4>
                     <p>Year: {{year}}</p>
                     <p>Price: ${{price}}</p>
                     <button class="btn-buy">Buy</button>
-                </div>
+                </li>
             {{/each}}
         </script>
     </main>
