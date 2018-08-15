@@ -10,7 +10,10 @@
 <body>
     <header>
         <h1>Buy Used Cars</h1>
-        <div id="selection"></div>
+        <div id="selection">
+            
+        </div>
+        
     </header>
     <main>
         <ul id="car-list">
@@ -26,6 +29,40 @@
                     <button class="btn-buy">Buy</button>
                 </li>
             {{/each}}
+        </script>
+
+        <script id="filter-search" type="text/x-handlebars-template">
+            <form action="#">
+                    <label>
+                        <select name="make" id="make">Make</select>a
+                        <option value="all">All</option
+                        {{#each makes}}
+                            <option value="{{make}}">{{make}} </option>
+                        {{/each}}
+                    </label>
+                    <label>
+                        <select name="model" id="model">Model</select>a
+                        <option value="all">All</option
+                        {{#each makes}}
+                            <option value="{{model}}">{{model}} </option>
+                        {{/each}}
+                    </label>
+                    <label>
+                        <select name="price" id="price">Price</select>a
+                        <option value="any">Any</option
+                        {{#each prices}}
+                            <option value="{{price}}">{{price}} </option>
+                        {{/each}}
+                    </label>
+                    <label>
+                        <select name="year" id="year">Year</select>a
+                        <option value="any">Any</option
+                        {{#each years}}
+                            <option value="{{year}}">{{year}} </option>
+                        {{/each}}
+                    </label>
+                    <input type="submit" value="Filter">
+                </form>
         </script>
     </main>
     <script src="js/handlebars.min.js"></script>
