@@ -57,9 +57,17 @@ var carApp = {
     var formTemplate = this.processTemplate('#filter-search');
     $('#selection').html(formTemplate(this.filters()));
   },
+  filterCars() {
+
+  },
+  bindEvents: function(e) {
+    e.preventDefault();
+    
+  },
   init: function() {
     this.renderCars();
     this.renderForm();
+    this.bindEvents();
   }
 }
 
