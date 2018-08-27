@@ -10,15 +10,10 @@
 <body>
     <header>
         <h1>Buy Used Cars</h1>
-        <div id="selection">
-            
-        </div>
-        
+        <div id="selection"></div>
     </header>
     <main>
-        <ul id="car-list">
-
-        </ul>
+        <ul id="car-list"></ul>
         <script id="car-template" type="text/x-handlebars-template">
             {{#cars}}
                 <li class="car-details">
@@ -33,42 +28,43 @@
 
         <script id="filter-search" type="text/x-handlebars-template">
             <form action="#">
-                    <label>Make
-                        <select name="make" id="make">
-                            <option value="all">All</option>
-                            {{#makes}}
-                                <option value="{{make}}">{{make}}</option>
-                            {{/makes}}
-                        </select>
-                    </label>
-                    <label>Model
-                        <select name="model" id="model">
-                            <option value="all">All</option>
-                            {{#models}}
-                                <option value="{{model}}">{{model}}</option>
-                            {{/models}}
-                        </select>
-                    </label>
-                    <label>Price
-                        <select name="price" id="price">
-                            <option value="any">Any</option>
-                            {{#prices}}
-                                <option value="{{price}}">{{price}}</option>
-                            {{/prices}}
-                        </select>
-                    </label>
-                    <label>Year
-                        <select name="year" id="year">
-                            <option value="any">Any</option>
-                            {{#years}}
-                                <option value="{{year}}">{{year}}</option>
-                            {{/years}}
-                        </select>
-                    </label>
-                    <input type="submit" value="Filter">
-                </form>
+                <label>Make
+                    <select name="make" id="make">
+                        <option value="all">All</option>
+                        {{#makes}}
+                            <option value="{{make}}">{{make}}</option>
+                        {{/makes}}
+                    </select>
+                </label>
+                <label>Model
+                    <select name="model" id="model">
+                        <option value="all">All</option>
+                        {{#models}}
+                            <option value="{{model}}">{{model}}</option>
+                        {{/models}}
+                    </select>
+                </label>
+                <label>Price
+                    <select name="price" id="price">
+                        <option value="any">Any</option>
+                        {{#prices}}
+                            <option value="{{price}}">{{price}}</option>
+                        {{/prices}}
+                    </select>
+                </label>
+                <label>Year
+                    <select name="year" id="year">
+                        <option value="any">Any</option>
+                        {{#years}}
+                            <option value="{{year}}">{{year}}</option>
+                        {{/years}}
+                    </select>
+                </label>
+                <input type="submit" value="Filter">
+            </form>
         </script>
     </main>
+    <script src="js/jquery.js"></script>
     <script src="js/handlebars.min.js"></script>
     <script src="js/main.js"></script>
 </body>
