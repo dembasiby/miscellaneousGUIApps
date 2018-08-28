@@ -1,0 +1,62 @@
+@import url("whitespace-reset.css");
+
+body {
+    font: normal 16px Helvetica, Arial, sans-serif;
+}
+h1 {
+    font-size: 2em;
+    padding: 10px 0 20px 0;
+}
+header, main {
+    padding: 20px;
+}
+.btn-buy, 
+header,
+select,
+input[type='submit'] {
+    background-color: #ffae00;
+    color: aliceblue;
+}
+select,
+input[type='submit'] {
+    width: 75px;
+    font-size: 1em;
+    padding: 2.5px 15px;
+    border-radius: .3em;
+    border-color:aliceblue;
+}
+#car-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 1fr;
+    grid-gap: 1em;
+}
+#car-list li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+#car-list li img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+    flex: 1;
+}
+.btn-buy {
+    width: 90px;
+    padding: .5em 0;
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+    font-weight: 500;
+}
+.btn-buy:hover {
+    cursor: pointer;
+}
+li h4,
+li p {
+    margin: .25em 0;
+}
+li h4 {
+    margin-top: .5em;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>A Car Shop With Filtering</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Buy Used Cars</h1>
+        <div id="selection"></div>
+    </header>
+    <main>
+        <ul id="car-list"></ul>
+        <script id="car-template" type="text/x-handlebars-template">
+            {{#cars}}
+                <li class="car-details">
+                    <img src="{{image}}" alt="{{make}} {{model}}">
+                    <h4>{{make}} {{model}} </h4>
+                    <p>Year: {{year}}</p>
+                    <p>Price: ${{price}}</p>
+                    <button class="btn-buy">Buy</button>
+                </li>
+            {{/cars}}
+        </script>
+
+        <script id="filter-search" type="text/x-handlebars-template">
+            <form action="#">
+                <label>Make
+                    <select name="make" id="make">
+                        <option value="all">All</option>
+                        {{#makes}}
+                            <option value="{{make}}">{{make}}</option>
+                        {{/makes}}
+                    </select>
+                </label>
+                <label>Model
+                    <select name="model" id="model">
+                        <option value="all">All</option>
+                        {{#models}}
+                            <option value="{{model}}">{{model}}</option>
+                        {{/models}}
+                    </select>
+                </label>
+                <label>Price
+                    <select name="price" id="price">
+                        <option value="any">Any</option>
+                        {{#prices}}
+                            <option value="{{price}}">{{price}}</option>
+                        {{/prices}}
+                    </select>
+                </label>
+                <label>Year
+                    <select name="year" id="year">
+                        <option value="any">Any</option>
+                        {{#years}}
+                            <option value="{{year}}">{{year}}</option>
+                        {{/years}}
+                    </select>
+                </label>
+                <input id="filterBtn" type="submit" value="Filter">
+            </form>
+        </script>
+    </main>
+    <script src="js/jquery.js"></script>
+    <script src="js/handlebars.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
