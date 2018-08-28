@@ -30,11 +30,11 @@ var carApp = {
   },
   filterValues: function (element) {
     var arr = [];
-    this.cars.forEach(function (car) { 
+    this.cars.forEach( (car) => { 
       if (!this.exists(arr, car[element])) {
         arr.push({ [element]: car[element] });
       }
-    }.bind(this));
+    });
   
     return arr;
   },
@@ -57,12 +57,29 @@ var carApp = {
     var formTemplate = this.processTemplate('#filter-search');
     $('#selection').html(formTemplate(this.filters()));
   },
-  filterCars() {
+  filterCars: function(e) {
+    e.preventDefault();
+    var options = {};
+    
+    var optionArr = $("option").filter(':selected');
+    for (let i = 0; i < optionArr.length; i += 1) {
+      options[optionArr[i].parentNode.name] = optionArr[i].value;
+    }
 
+    var filterContext = this.cars.filter(function(car) {
+      return (
+        (options.make  == 'all' || car.make == options.make)   &&
+        (options.model == 'all' || car.model == options.model) &&
+        (options.price == 'any' || car.price == options.price) &&
+        (options.year  == 'any' || car.year == options.year)
+      );
+    });
+
+    var carsTemplate = this.processTemplate('#car-template');
+    $('#car-list').html(carsTemplate({cars: filterContext}));
   },
   bindEvents: function(e) {
-    e.preventDefault();
-    
+    $('#filterBtn').on('click', this.filterCars.bind(this));
   },
   init: function() {
     this.renderCars();
