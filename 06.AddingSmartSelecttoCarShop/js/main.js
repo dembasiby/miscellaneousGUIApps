@@ -40,10 +40,10 @@ var carApp = {
   },
   filters: function() {
     return {
-      makes: this.filterValues('make'),
+      makes:  this.filterValues('make'),
       models: this.filterValues('model'),
       prices: this.filterValues('price'),
-      years: this.filterValues('year'),
+      years:  this.filterValues('year'),
     }
   },
   processTemplate: function(id) {
@@ -53,7 +53,7 @@ var carApp = {
     var carsTemplate = this.processTemplate('#car-template');
     $('#car-list').html(carsTemplate({cars: this.cars}));
   },
-  renderForm: function() {
+  renderForm: function() {    
     var formTemplate = this.processTemplate('#filter-search');
     $('#selection').html(formTemplate(this.filters()));
   },
@@ -78,8 +78,17 @@ var carApp = {
     var carsTemplate = this.processTemplate('#car-template');
     $('#car-list').html(carsTemplate({cars: filterContext}));
   },
+  filterOptions: function(e) {
+    e.preventDefault();
+    console.log('Hello');
+  
+
+    var formTemplate = this.processTemplate('#filter-search');
+    $('#selection').html(formTemplate(filterContext));
+  },
   bindEvents: function(e) {
     $('#filterBtn').on('click', this.filterCars.bind(this));
+    $('select').on('blur', this.filterOptions.bind(this));
   },
   init: function() {
     this.renderCars();
@@ -89,6 +98,8 @@ var carApp = {
 }
 
 carApp.init();
+
+// if car.make
 
 
 
