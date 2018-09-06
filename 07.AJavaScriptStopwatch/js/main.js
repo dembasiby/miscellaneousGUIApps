@@ -11,8 +11,7 @@ var stopWatch = {
     $('#milliseconds').html(this.milliseconds < 10 ? '0' + 
       this.milliseconds : this.milliseconds);
   },
-  startClock: function(e) {
-    e.preventDefault();
+  startClock: function() {
     this.interVal = setInterval(function() {
       this.milliseconds += 1
       if (this.milliseconds == 99) {
@@ -30,19 +29,15 @@ var stopWatch = {
       
       this.displayTime();
     }.bind(this), 10);
+
     $('.start').html('Stop').removeClass('start').addClass('stop');
   },
-  stopClock: function(e) {
-    e.preventDefault();
+  stopClock: function() {
     clearInterval(this.interVal);
     $('.stop').html('Start').removeClass('stop').addClass('start');
   },
-  resetClock: function(e) {
-    e.preventDefault();
-    $('.stop, .start').html('Start')
-      .removeClass('stop').addClass('start');
-    
-    clearInterval(this.interVal);
+  resetClock: function() {
+    this.stopClock();
     this.milliseconds = 0;
     this.seconds = 0;
     this.minutes = 0;
@@ -57,6 +52,7 @@ var stopWatch = {
   },
   init: function() {
     this.bind();
+    
   }
 }
 
